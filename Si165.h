@@ -5,6 +5,8 @@
  * The data is read in big endian (first '165 data ends up at the first data location).
  */
 
+#ifndef	_SI165_H
+#define	_SI165_H
 #include <inttypes.h>
 #include <Arduino.h>
 
@@ -16,5 +18,8 @@ private:
 	uint8_t	_pl;	// Load register with parallel data (chip pin 1)
 public:
 	Si165(uint8_t len, uint8_t ds, uint8_t sclk, uint8_t pl);
-	void	read(uint8_t *data);
+	void	read(uint8_t *data);	// read the data from the chips into array starting at data
 };
+
+#endif	/* Si165.h */
+
